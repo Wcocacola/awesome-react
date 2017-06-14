@@ -12,8 +12,8 @@
 You should clone the repo and install the dependencies, and then npm start.That is all.
 
 ```bash
-$ git clone https://github.com/allan2coder/awsome-react.git
-$ cd awsome-react
+$ git clone https://github.com/allan2coder/awesome-react.git
+$ cd awesome-react
 $ npm install
 ```
 Then launch the project app.
@@ -29,6 +29,9 @@ You should see a new browser tap opening and a page of 'index.html' in http://lo
 ``` bash
 npm run build
 ```
+
+## Why Redux
+![image](https://raw.githubusercontent.com/allan2coder/awesome-react/master/static/why-redux.jpg)
 
 ### Reference Articles
 * [ECMAScript 6入门](http://es6.ruanyifeng.com/)

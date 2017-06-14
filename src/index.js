@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import { createLogger } from 'redux-logger';
 import thunk from 'redux-thunk';
@@ -18,10 +18,11 @@ if (process.env.NODE_ENV !== 'production') {
   middleware.push(createLogger())
 }
 
+/* use redux devTool */
 const store = createStore(
-  reducer,
-  applyMiddleware(...middleware)
-)
+    reducer,
+    compose(applyMiddleware(thunk),window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()) //插件调试，未安装会报错
+);
 
 // const render = Component => {
 //   ReactDOM.render(
@@ -42,7 +43,7 @@ const store = createStore(
 //   module.hot.accept('./components/app', () => { render(App) })
 // }
 
-/* I think the way is fine */
+/* I think this way is better */
 ReactDOM.render(
   <Provider store={store}>
   	<Router>
